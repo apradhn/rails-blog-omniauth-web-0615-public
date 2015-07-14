@@ -6,6 +6,11 @@ class SessionsController < ApplicationController
     redirect_to "/"
   end
 
+  def destroy
+    reset_session
+    redirect_to root_path, notice: "Logged Out"
+  end
+
   protected
   def auth_hash
     request.env['omniauth.auth']

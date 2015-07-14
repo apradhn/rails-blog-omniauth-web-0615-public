@@ -1,5 +1,7 @@
 <% if logged_in? %>
   Logged in as <%= current_user.name %>
+  <%= link_to "Log Out", logout_path %>
+  <%= link_to "New Post", new_post_path %>
 <% else %>
-  <%= link_to "Sign in with Github",  "/auth/github/" %>
+  <%= link_to "Log In with Github",  "/auth/github/" %>
 <% end %>

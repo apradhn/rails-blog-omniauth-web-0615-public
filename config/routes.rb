@@ -3,6 +3,7 @@ RailsBlog::Application.routes.draw do
   root 'posts#index'
   get '/auth/:provider/callback' => "sessions#create"
   get '/login' => "sessions#new"
+  get '/logout' => "sessions#destroy"
   
   resources :sessions
   resources :users, :only => [:new, :show, :index]
